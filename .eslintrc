@@ -1,0 +1,88 @@
+{
+  "ignorePatterns": [
+    "*.config.js"
+  ],
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "uni": "readonly",
+    "getCurrentPages": "readonly",
+    "getApp": "readonly"
+  },
+  "parser": "vue-eslint-parser", // 解析 .vue 文件
+  "extends": [
+    "plugin:vue/recommended", // 最高约束级别，冲呀！！！
+    "@vue/airbnb",
+    "prettier/@typescript-eslint", // 优先 prettier 中的样式规范
+    "plugin:@typescript-eslint/recommended",
+    "@vue/prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser" // 解析 .ts 文件
+  },
+  "rules": {
+    "prettier/prettier": 0,
+    "no-underscore-dangle": 0,
+    "no-else-return": 0,
+    "no-empty": 1,
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "import/no-mutable-exports": 1,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    // todo: 下面的eslint规则，建议适度遵循
+    "no-undef": 0,
+    "no-unused-expressions": 0,
+    "no-use-before-define": 0,
+    "no-restricted-syntax": 1,
+    "no-param-reassign": 1,
+    "no-plusplus": 1,
+    "prefer-const": 0,
+    "one-var": 0,
+    "no-case-declarations": 0,
+    "prefer-template": 1,
+    "import/no-cycle": 1,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "vue": "always"
+      }
+    ],
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
+    "prefer-destructuring": 1,
+    "@typescript-eslint/ban-types": 1,
+    "@typescript-eslint/no-this-alias": 1,
+    "@typescript-eslint/ban-ts-comment": 1,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-empty-function": 1,
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "settings": {
+    // https://devrsi0n.com/articles/eslint-typescript-import-unsolve
+    "import/resolver": {
+      // WARN: 必须的参数。
+      // 默认使用根目录 tsconfig.json
+      // ts文件引入ts文件。 alias等
+      "typescript": {
+        // 从 <roo/>@types 读取类型定义
+        // "alwaysTryTypes": true
+      }
+    }
+  }
+}

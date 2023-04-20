@@ -1,0 +1,31 @@
+{
+  "name": "@focus/pro-mini-components",
+  "version": "1.12.0",
+  "main": "index.js",
+  "author": {
+    "name": "Xing Liu",
+    "email": "xingliu218848@sohu-inc.com"
+  },
+  "scripts": {
+    "docs:gen": "vuese gen --genType=markdown --markdownFile=README --markdownDir=*",
+    "release": "standard-version -a && git push --follow-tags origin master && npm publish"
+  },
+  "license": "MIT",
+  "files": [
+    "/src/**/*"
+  ],
+  "peerDependencies": {
+    "classnames": "^2.3.2",
+    "uview-ui": "^1.8.4",
+    "vue": "^2.6.11",
+    "vue-class-component": "^6.3.2",
+    "vue-property-decorator": "9.1.2"
+  },
+  "devDependencies": {
+    "@vuese/cli": "^2.14.3",
+    "standard-version": "^9.5.0"
+  },
+  "dependencies": {
+    "helpful-decorators": "^2.1.0"
+  }
+}
